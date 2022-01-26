@@ -1,0 +1,50 @@
+package BrowserTest;
+
+import java.sql.Time;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
+
+
+public class Training_01 {
+
+	public static void main(String[] args) throws Exception
+	{
+		System.setProperty("webdriver.gecko.driver", "C:\\Users\\lenovo\\Downloads\\geckodriver-v0.30.0-win32\\geckodriver.exe");
+		WebDriver driver= new FirefoxDriver();
+		driver.get("https://angular.io/");
+		driver.manage().window().maximize();
+		
+		
+try {
+		Thread.sleep(2000);
+		//driver.findElement(By.xpath("//*[@class='ssrcss-qgttmg-AccountText eki2hvo4']")).click();
+		driver.findElement(By.xpath("//a[@href='docs']")).click();
+		Thread.sleep(2000);
+		if(driver.findElement(By.id("introduction-to-the-angular-docs")).isDisplayed())	
+		{
+			System.out.println("introduction to the angular docs are getting displayed");
+		}
+		else
+		{
+			System.out.println("introduction to the angular docs are NOT getting displayed");
+		}
+		
+}
+catch(Exception e){
+	System.out.println("Test Case Failed");
+	e.printStackTrace();
+	e.getCause();
+	e.getMessage();
+}
+		
+		
+		//features--benefits
+		
+	}
+}
